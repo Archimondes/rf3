@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
   def index
-    @restaurants = Restaurant.page(params[:page]).per(9)
+    @restaurants = Restaurant.includes(:category,:favorited_users).page(params[:page]).per(9)
     @categories = Category.all
   end
 

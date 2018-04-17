@@ -35,7 +35,11 @@
 
     <br>
 
-    <%= render partial: "shared/restaurant_list" %>
+    <%= render :partial => "shared/restaurant_list", :collection => @restaurants, :as => :restaurant %>
+
+    <div class="text-center">
+      <%= paginate @restaurants %>
+    </div>
 
   </div>
 </div>

@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
+
     @restaurant = Restaurant.find(params[:restaurant_id])
     @comment = @restaurant.comments.build(comment_params)
     @comment.user = current_user
